@@ -1,0 +1,23 @@
+---
+
+# Install
+- import_tasks: install.yml
+  tags:
+    - manala_supervisor
+
+# Config
+- import_tasks: config.yml
+  tags:
+    - manala_supervisor
+
+# Configs
+- import_tasks: configs.yml
+  tags:
+    - manala_supervisor
+
+# Services
+- import_tasks: services.yml
+  tags:
+    - manala_supervisor
+    - manala_supervisor.services
+    - manala.services

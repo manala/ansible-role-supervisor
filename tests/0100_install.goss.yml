@@ -1,0 +1,15 @@
+---
+
+package:
+  supervisor:
+    installed: true
+
+command:
+  dpkg -s supervisor:
+    exit-status: 0
+    stdout:
+{{ if eq .Env.DISTRIBUTION_RELEASE "jessie" }}
+      - "/^Version: [\\d\\.-]+manala\\d+~{{ .Env.DISTRIBUTION_RELEASE }}\\d+$/"
+{{ else }}
+      - "Version:"
+{{ end }}
